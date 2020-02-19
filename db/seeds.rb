@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Restaurant.destroy_all
 10.times do
   restaurant = Restaurant.new(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
-    phone: Faker::PhoneNumber.phone_number_with_country_code,
+    phone: Faker::PhoneNumber.cell_phone,
     category: ["chinese", "italian", "japanese", "french", "belgian"].sample
   )
   restaurant.save
 end
-

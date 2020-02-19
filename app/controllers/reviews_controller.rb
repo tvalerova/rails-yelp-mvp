@@ -19,4 +19,8 @@ class ReviewsController < ApplicationController
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
+
+  def review_params
+    params.require(:review).permit(:content)
+  end
 end
